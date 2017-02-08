@@ -34,7 +34,15 @@ module Tmdb
     @@fields.each do |field|
       attr_accessor field
     end
-
+    #testing upcoming
+    def self.upcoming
+      search = Tmdb::Search.new("/tv/airing_today")
+      search.fetch
+    end
+    
+    #testing 
+    
+    
     #Get the list of popular TV shows. This list refreshes every day.
     def self.popular
       search = Tmdb::Search.new("/tv/popular")
